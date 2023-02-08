@@ -1,0 +1,32 @@
+@startuml
+object "Gioconda: Cuadro" as cuadro{
+Título =  "La Gioconda"
+AC = "1503-1516"
+Técnica = Óleo
+Sub-técnica = Sfumato
+Soporte = Madera de alamo
+Autor = "Leonardo da Vinci"
+Estado de conservación = "Regular"
+}
+object "l1: Lugar" as lugar{
+Institución = "Museo del Louvre"
+Ciudad = "París"
+País = "Francia"
+}
+object "Réplica: Cuadro" as replica{
+Título =  "Gioconda de El Prado"
+AC = "1503-1516"
+Técnica = Óleo
+Sub-técnica = Pincelada simple
+Autor = desconocido
+Estado de conservación = "Bueno"
+}
+object "l2: Lugar" as lugar2{
+Institución = "Museo del Prado"
+Ciudad = "Madrid"
+País = "España"
+}
+cuadro -- lugar : Se Localiza En
+replica -- lugar2 : Se Localiza En
+cuadro -- replica : Es Una Réplica De
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+class Círculo{
+Color: 1 Texto
+Diámetro: 1 Número
+}
+
+class Rectángulo{
+Longitud: 1 Número
+Anchura: 1 Número
+Color: 1 Texto
+
+}
+class Cuadrado{
+Longitud: 1 Número
+Color: 1 Texto
+
+}
+class Elipse{
+Color: 1 Texto
+Eje Mayor: 1 Número
+Eje Menor: 1 Número
+}
+@enduml

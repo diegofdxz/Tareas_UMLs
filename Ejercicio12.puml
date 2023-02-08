@@ -1,0 +1,8 @@
+@startuml
+class Estructura {
+Código: 1 Texto
+Datación: 0..1 Tiempo
+Material: 1..* enum Material
+}
+Estructura "Estructura marco " o-- "Sub-estructura" Estructura
+@enduml

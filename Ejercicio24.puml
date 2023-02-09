@@ -1,0 +1,6 @@
+@startuml
+Class "Constrcción(A)" as Construcción{}
+Class Edificio extends Construcción{}
+Class "Conjunto Construido" as Conjunto extends Construcción{}
+Conjunto "0..*" o-- "0..1" Construcción
+@enduml

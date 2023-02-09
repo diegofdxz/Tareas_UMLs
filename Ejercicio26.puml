@@ -1,0 +1,56 @@
+@startuml
+Class "Iglesia(A)" as iglesia{
+Nombre: 1 Texto
+Direccion: 0..1 Texto
+}
+Class Crucero{
+Tipo: 1 enum TipoCrucero
+}
+Class "Iglesia Rural" as rural extends iglesia{}
+Class "Iglesia Monacal" as monacal extends iglesia{
+Orden: 1 Texto
+}
+Class Ábside{ 
+Forma: 1 enum FormaAbside
+}
+Class Nave{ 
+Superficie: 1 Número
+}
+Class "Ventana(A)" as ventana{
+Descripción: 1 Texto
+Anchura: 1 Número
+Altura: 1 Número
+}
+Class "Ventana Simple" as simple extends ventana{
+Arco Doble: 1 Booleano
+Decorada: 1 Booleano
+Técnica de cierre: 1 enum TécnicaCierreSimple
+}
+Class "Ventana Compleja" as compleja extends ventana{
+Tecnicas de cierre: 1 enum TécnicaCierreCompleja
+}
+enum TipoCrucero{
+Sin Brazos Salientes
+Con Brazos Salientes
+}
+enum FormaAbside{
+Semicircular
+En Corona
+}
+enum TécnicaCierreSimple{
+Tela encerada
+Tela impregnada
+}
+enum TécnicaCierreCompleja{
+Vidriera incolora
+Vidriera coloreada
+}
+rural "1" o-- "0..*" simple
+rural "0..1" o-- "1" Nave
+rural "0..1" o-- "1" Ábside
+monacal "1" o-- "0..*" compleja
+monacal "0..1" o-- "3..5" Nave
+monacal "0..1" o-- "1" Ábside
+monacal "1" o-- "1" Crucero
+
+@enduml

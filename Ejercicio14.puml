@@ -1,0 +1,38 @@
+@startuml
+object "t1: Polígono" as t1{
+
+}
+object "p1: Punto" as p1{
+X = -1
+Y = 1
+}
+object "p2: Punto" as p2{
+X = -1
+Y = -1
+}
+object "p3: Punto" as p3{
+X = 1
+Y = -1
+}
+object "p4: Punto" as p4{
+X = -1
+Y = 1
+}
+object "p5: Punto" as p5{
+X = 1
+Y = 1
+}
+object "p6: Punto" as p6{
+X = 1
+Y = -1
+}
+object "t2: Polígono" as t2{
+
+}
+t1 o-- p1 : Posee >
+t1 o-- p2 : Posee >
+t1 o-- p3 : Posee >
+t2 o-- p4 : Posee >
+t2 o-- p5 : Posee >
+t2 o-- p6 : Posee >
+@enduml

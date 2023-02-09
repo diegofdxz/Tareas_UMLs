@@ -1,0 +1,12 @@
+@startuml
+Class Persona{}
+Class "Rol(A)" as Rol{}
+Class Responsable extends Rol{}
+Class Técnico extends Rol{}
+Class "Intervención(A)" as Intervención{}
+Class Proyecto extends Intervención{}
+Class Actuación extends Intervención{}
+Persona "1" -- "0..*" Rol : Desempeña >
+Responsable "1" -- "1" Proyecto : Dirige >
+Técnico "Participante" -- Intervención : Participa >
+@enduml

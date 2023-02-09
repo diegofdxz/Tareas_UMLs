@@ -1,0 +1,22 @@
+@startuml
+Class "Sitio Arqueológico" as SA{}
+Class Excavacion{
+Fecha de inicio: 1 Tiempo
+Fecha de finalizacion: 0..1 Tiempo
+}
+Class "Objeto Arqueológico (A)" as OA{
+Código: 1 Texto
+Datación: 0..1 Tiempo
+Dimensiones: ?
+Descripción: 1 Texto
+Material: 1..* enum Material
+}
+Class "Fragmento de Objeto" as FO extends OA{}
+Class "Objeto Completo" as OC extends OA{
+Uso: 1..* enum Uso
+}
+SA "1"-- "0..*" Excavacion : Tiene Lugar Sobre <
+Excavacion "1"-- "0..*" OA : Contiene >
+OA "0..*"--"0..*" OA : ES Similar A >
+OC "0..*" o-- "0..1" OA
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class Polígono{
+}
+class Punto{
+X: 1 Número
+Y: 1 Número
+}
+Polígono "1" o-- "3..*" Punto : Posee >
+@enduml

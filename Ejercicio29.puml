@@ -1,0 +1,36 @@
+@startuml
+Class Persona {
+Nombre dado: 1 Texto (T)
+Nombre de Familia: 1 Texto (T)
+Sexo: 1 enum Sexo
+Fecha de Nacimiento: 1 Tiempo
+Lugar de Nacimiento: 1 Texto
+Fecha de defunción: 0..1 Tiempo
+Lugar de defunción: 0..1 Texto
+}
+Class Documento {
+Título: 1 Texto
+Tipo: 1 enum TipoDocumento
+Fecha de publicación: 0..1 Tiempo
+}
+Class Ocupación {
+Nombre: 1 Texto
+Desde: 1 Tiempo
+Hasta: 0..1 Tiempo
+}
+Class Lugar {
+Nombre: 0..* Texto
+Dirección: 0..1 Texto
+País: 1 Texto
+}
+Class Evento {
+Nombre: 1 Texto
+Momento de celebración: 1 Tiempo
+Descripción: 0..1 Texto
+}
+Persona "0..*" -- "0..*"Documento : Lee >
+Persona "1"-- "0..*"Ocupación : Desempeña >
+Persona "0..*"-- "0..1"Lugar : Visita >
+Persona "0..*"-- "0..*"Evento : Participa En >
+Persona "0..*"-- "0..*"Persona: Contacta Con >
+@enduml
